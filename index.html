@@ -543,7 +543,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
   <!-- زر المفاجأة التحفيزية الواضح في آخر الموقع -->
   <div style="margin: 25px 0;">
-    <button class="btn" onclick="openSecret()" style="background: linear-gradient(110deg, var(--cyan), var(--purple)); color: #08080d; font-weight: 800; box-shadow: 0 0 25px rgba(103,232,249,0.3);">
+    <button class="btn" onclick="openSecret()" style="background: linear-gradient(110deg, var(--cyan), var(--purple)); color: #08080d; font-weight: 800; box-shadow: 0 0 25px rgba(103,232,249,0.3);" data-i18n="secretMainBtn">
       🚀 اضغط هنا لرسالة ملهمة لك
     </button>
   </div>
@@ -636,6 +636,7 @@ const translations = {
 en:{
 headerLabel:"AI THROUGH MY EYES",
 
+secretMainBtn:"🚀 Click here for an inspiring message",
 secretTitle:"An Inspiring Message for You!",
 secretText:"Technology and AI are just the beginning in your hands. Never stop your curiosity, keep exploring, creating, and shaping your own world your way. The future starts right here!",
 secretBtn:"Got it, Let's Go!",
@@ -726,6 +727,7 @@ surpriseFeedback:"Real-World Example: In modern customer service systems or voic
 ar:{
 headerLabel:"AI THROUGH MY EYES",
 
+secretMainBtn:"🚀 اضغط هنا لرسالة ملهمة لك",
 secretTitle:"رسالة ملهمة لك!",
 secretText:"التقنية والذكاء الاصطناعي في إصرارك وعقلك مجرد بداية.. لا توقف فضولك عند أي حد، فكر، ابتكر، واصنع عالمك الخاص بالطريقة التي تؤمن بها. المستقبل يبدأ من هنا!",
 secretBtn:"حسناً، لننطلق!",
@@ -861,7 +863,7 @@ function replay(){
 
 
 // ========================================
-// LANGUAGE SYSTEM
+// LANGUAGE SWITCHING
 // ========================================
 
 function setLanguage(lang){
