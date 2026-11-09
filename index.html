@@ -242,7 +242,6 @@ body[dir="rtl"] .quote{
 body[dir="rtl"] .feedback{text-align:right}
 .feedback.show{display:block}
 
-/* نافذة الرسالة التحفيزية في النهاية (التي أرسلتها أنت في كودك الأصلي) */
 #secretModal {
   position: fixed; inset: 0; background: rgba(8,8,13,0.85); backdrop-filter: blur(10px);
   z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
@@ -328,7 +327,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
 <body>
 
-<!-- شاشة التفعيل الذكي عند الدخول (المضافة حديثاً) -->
+<!-- شاشة التفعيل الذكي عند الدخول -->
 <div id="authScreen">
   <div class="auth-box">
     <div style="font-size:11px; letter-spacing:3px; color:var(--purple); margin-bottom:10px;" data-i18n="authEyebrow">SECURE ACCESS</div>
@@ -346,7 +345,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <canvas id="stars"></canvas>
 <div class="noise"></div>
 
-<!-- نافذة الرسالة التحفيزية في النهاية (كودك الأصلي تماماً) -->
+<!-- نافذة الرسالة التحفيزية في النهاية -->
 <div id="secretModal">
   <div id="secretBox">
     <div style="font-size: 35px; margin-bottom: 15px;">🚀</div>
@@ -392,7 +391,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
       <div class="eyebrow" data-i18n="s1Eyebrow">01 / AI IN MY WORDS</div>
       <h2 data-i18n="s1Title">More than a machine. <span class="gradient">A new way to create.</span></h2>
       <p data-i18n="s1Text">
-        To me, artificial intelligence is a tool that learns patterns from data and uses them to help us solve problems, explore ideas, and create things we could not imagine before.
+        To me, Artificial Intelligence is not just a machine or complex lines of code; it is a smart mirror reflecting our potential, fueled by the data and patterns around us. It is the partner that helps us save time, solve complex problems, and turn bold ideas from our imagination into tangible reality—opening new horizons for creativity we never imagined before.
       </p>
     </div>
 
@@ -413,7 +412,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
     <div class="nav-controls">
       <button class="btn secondary" onclick="goTo(0)"><span>←</span><span data-i18n="back">BACK</span></button>
-      <div class="step-label">01 / 04</div>
+      <div class="step-label">01 / 05</div>
       <button class="btn" onclick="goTo(2)"><span data-i18n="next">NEXT</span><span>→</span></button>
     </div>
   </div>
@@ -461,7 +460,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
     <div class="nav-controls">
       <button class="btn secondary" onclick="goTo(1)">← <span data-i18n="back">BACK</span></button>
-      <div class="step-label">02 / 04</div>
+      <div class="step-label">02 / 05</div>
       <button class="btn" onclick="goTo(3)"><span data-i18n="next">NEXT</span> →</button>
     </div>
   </div>
@@ -498,7 +497,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
     <div class="nav-controls">
       <button class="btn secondary" onclick="goTo(2)">← <span data-i18n="back">BACK</span></button>
-      <div class="step-label">03 / 04</div>
+      <div class="step-label">03 / 05</div>
       <button class="btn" onclick="goTo(4)"><span data-i18n="next">NEXT</span> →</button>
     </div>
   </div>
@@ -557,7 +556,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
     <div class="nav-controls">
       <button class="btn secondary" onclick="goTo(3)">← <span data-i18n="back">BACK</span></button>
-      <div class="step-label">04 / 04</div>
+      <div class="step-label">04 / 05</div>
       <button class="btn" onclick="goTo(5)"><span data-i18n="finish">FINISH</span> →</button>
     </div>
   </div>
@@ -586,7 +585,6 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
     <strong data-i18n="endQuote">The tool is artificial. The curiosity is real.</strong>
   </div>
 
-  <!-- زر المفاجأة التحفيزية الذي أرسلته أنت في الكود الأصلي -->
   <div style="margin: 25px 0;">
     <button class="btn" onclick="openSecret()" style="background: linear-gradient(110deg, var(--cyan), var(--purple)); color: #08080d; font-weight: 800; box-shadow: 0 0 25px rgba(103,232,249,0.3);" data-i18n="secretMainBtn">
       ✨ Read an inspiring message for you here
@@ -612,27 +610,17 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
 <script>
 
-// ========================================
-// AUTH SCREEN (التفعيل الذكي عند الدخول)
-// ========================================
 function unlockExperience() {
   const auth = document.getElementById("authScreen");
   auth.classList.add("hidden");
 }
 
-// ========================================
-// SECRET FEATURE (كودك الأصلي تماماً للرسالة التحفيزية)
-// ========================================
 function openSecret() {
   document.getElementById("secretModal").style.display = "flex";
 }
 function closeSecret() {
   document.getElementById("secretModal").style.display = "none";
 }
-
-// ========================================
-// AUDIO SYSTEM (كودك الأصلي تماماً)
-// ========================================
 
 let soundEnabled = false;
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -677,11 +665,6 @@ soundBtn.addEventListener("click", () => {
   }
   if(soundEnabled) playInteractionSound(880, 'sine', 0.15);
 });
-
-
-// ========================================
-// LANGUAGE SYSTEM (كودك الأصلي تماماً)
-// ========================================
 
 const translations = {
 
@@ -879,11 +862,6 @@ surpriseFeedback:" في أنظمة خدمة العملاء الصوتية الح
 
 };
 
-
-// ========================================
-// EXPERIENCE NAVIGATION (كودك الأصلي تماماً)
-// ========================================
-
 let currentScreen = 0;
 let currentLang = "en";
 const totalScreens = 6;
@@ -923,11 +901,6 @@ function replay(){
   goTo(0);
 }
 
-
-// ========================================
-// LANGUAGE SWITCHING (كودك الأصلي تماماً)
-// ========================================
-
 function setLanguage(lang){
   currentLang = lang;
 
@@ -956,11 +929,6 @@ function setLanguage(lang){
 document.getElementById("langBtn").addEventListener("click",()=>{
   setLanguage(currentLang === "en" ? "ar" : "en");
 });
-
-
-// ========================================
-// INTERACTIVE DISCOVERY (كودك الأصلي تماماً)
-// ========================================
 
 function reveal(button){
   const content = button.nextElementSibling;
@@ -991,11 +959,6 @@ function revealSurprise(){
   feedback.textContent = translations[currentLang].surpriseFeedback;
   feedback.classList.add("show");
 }
-
-
-// ========================================
-// AMBIENT STARFIELD (كودك الأصلي تماماً)
-// ========================================
 
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
@@ -1053,11 +1016,6 @@ window.addEventListener("resize",resizeCanvas);
 
 resizeCanvas();
 drawStars();
-
-
-// ========================================
-// INITIALIZE (كودك الأصلي تماماً)
-// ========================================
 
 setLanguage("en");
 goTo(0);
