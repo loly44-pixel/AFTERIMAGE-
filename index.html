@@ -60,7 +60,7 @@ header{
 
 .logo{
   font-family:"Space Grotesk",sans-serif;font-size:19px;
-  font-weight:700;letter-spacing:4px;
+  font-weight:700;letter-spacing:4px; cursor: pointer;
 }
 .logo span{color:var(--purple)}
 
@@ -211,6 +211,17 @@ body[dir="rtl"] .quote{
 body[dir="rtl"] .feedback{text-align:right}
 .feedback.show{display:block}
 
+/* تنسيق النافذة السرية التفاعلية الجديدة */
+#secretModal {
+  position: fixed; inset: 0; background: rgba(8,8,13,0.85); backdrop-filter: blur(10px);
+  z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
+}
+#secretBox {
+  background: var(--surface); border: 1px solid var(--purple); border-radius: 20px;
+  max-width: 450px; width: 100%; padding: 30px; text-align: center;
+  box-shadow: 0 0 40px rgba(167,139,250,0.3); animation: fadeIn 0.4s ease;
+}
+
 .progress-wrap{
   position:fixed;bottom:0;left:0;right:0;z-index:50;
   background:rgba(8,8,13,.94);backdrop-filter:blur(15px);
@@ -289,8 +300,18 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <canvas id="stars"></canvas>
 <div class="noise"></div>
 
+<!-- نافذة السر التفاعلية الممتعة -->
+<div id="secretModal">
+  <div id="secretBox">
+    <div style="font-size: 30px; margin-bottom: 15px;">✨</div>
+    <h3 style="color:var(--purple); margin-bottom: 10px;">Hidden AI Easter Egg!</h3>
+    <p style="font-size: 14px; margin-bottom: 20px;">You discovered the hidden layer of AFTERIMAGE. Remember: The tool is artificial, but your curiosity makes it real.</p>
+    <button class="btn" onclick="closeSecret()" style="padding: 10px 20px; font-size: 12px;">CLOSE / إغلاق</button>
+  </div>
+</div>
+
 <header>
-  <div class="logo">AFTER<span>IMAGE</span></div>
+  <div class="logo" onclick="triggerSecret()" title="Click me 3 times!">AFTER<span>IMAGE</span></div>
   <div class="header-right">
     <div class="header-label" data-i18n="headerLabel">AI THROUGH MY EYES</div>
     <button class="header-btn" id="soundBtn" aria-label="Toggle Sound">🔇 MUTE</button>
@@ -398,7 +419,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
   </div>
 </section>
 
-<!-- SCREEN 3 : SURPRISE (محدث تماماً بعنوان ومثال واضح ومثير للفضول) -->
+<!-- SCREEN 3 : SURPRISE -->
 <section class="screen" id="screen3">
   <div class="content">
     <div class="section-head">
@@ -538,6 +559,21 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <script>
 
 // ========================================
+// EASTER EGG: SECRET INTERACTIVE FEATURE
+// ========================================
+let clickCount = 0;
+function triggerSecret() {
+  clickCount++;
+  if (clickCount >= 3) {
+    document.getElementById("secretModal").style.display = "flex";
+    clickCount = 0;
+  }
+}
+function closeSecret() {
+  document.getElementById("secretModal").style.display = "none";
+}
+
+// ========================================
 // AUDIO SYSTEM (Web Audio API with Toggle)
 // ========================================
 
@@ -587,7 +623,7 @@ soundBtn.addEventListener("click", () => {
 
 
 // ========================================
-// LANGUAGE SYSTEM (مُحدث بالنصوص الجديدة الممتعة)
+// LANGUAGE SYSTEM
 // ========================================
 
 const translations = {
@@ -920,6 +956,7 @@ function createStars(){
 function drawStars(){
   ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 
+  stars.dir = currentLang === "ar" ? "rtl" : "ltr";
   stars.forEach(star=>{
     star.y -= star.speed;
 
