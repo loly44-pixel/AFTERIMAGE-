@@ -41,7 +41,7 @@ button:disabled{opacity:.35;cursor:not-allowed}
 button:focus:not(:focus-visible){outline:none}
 button,a{-webkit-tap-highlight-color:transparent}
 
-/* شاشة التفعيل الذكي عند الدخول (Splash / Auth Screen) */
+/* شاشة التفعيل الذكي عند الدخول */
 #authScreen {
   position: fixed; inset: 0; background: var(--bg); z-index: 9999;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -242,6 +242,17 @@ body[dir="rtl"] .quote{
 body[dir="rtl"] .feedback{text-align:right}
 .feedback.show{display:block}
 
+/* نافذة الرسالة التحفيزية في النهاية (التي أرسلتها أنت في كودك الأصلي) */
+#secretModal {
+  position: fixed; inset: 0; background: rgba(8,8,13,0.85); backdrop-filter: blur(10px);
+  z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
+}
+#secretBox {
+  background: var(--surface); border: 1px solid var(--purple); border-radius: 20px;
+  max-width: 500px; width: 100%; padding: 35px; text-align: center;
+  box-shadow: 0 0 50px rgba(167,139,250,0.35); animation: fadeIn 0.4s ease;
+}
+
 .progress-wrap{
   position:fixed;bottom:0;left:0;right:0;z-index:50;
   background:rgba(8,8,13,.94);backdrop-filter:blur(15px);
@@ -317,7 +328,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
 <body>
 
-<!-- شاشة المصادقة / التفعيل الذكي عند الدخول -->
+<!-- شاشة التفعيل الذكي عند الدخول (المضافة حديثاً) -->
 <div id="authScreen">
   <div class="auth-box">
     <div style="font-size:11px; letter-spacing:3px; color:var(--purple); margin-bottom:10px;" data-i18n="authEyebrow">SECURE ACCESS</div>
@@ -334,6 +345,18 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
 <canvas id="stars"></canvas>
 <div class="noise"></div>
+
+<!-- نافذة الرسالة التحفيزية في النهاية (كودك الأصلي تماماً) -->
+<div id="secretModal">
+  <div id="secretBox">
+    <div style="font-size: 35px; margin-bottom: 15px;">🚀</div>
+    <h3 style="color:var(--purple); margin-bottom: 12px; font-size: 20px;" data-i18n="secretTitle">An Inspiring Message for You!</h3>
+    <p style="font-size: 14px; margin-bottom: 25px; color: var(--muted); line-height: 1.9;" data-i18n="secretText">
+      Technology and AI are just the beginning in your hands. Never stop your curiosity, keep exploring, creating, and shaping your own world your way. The future starts right here!
+    </p>
+    <button class="btn" onclick="closeSecret()" style="padding: 10px 30px; font-size: 13px;" data-i18n="secretBtn">✨ Thank you for your time, best of luck!</button>
+  </div>
+</div>
 
 <header>
   <div class="logo">AFTER<span>IMAGE</span></div>
@@ -563,6 +586,13 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
     <strong data-i18n="endQuote">The tool is artificial. The curiosity is real.</strong>
   </div>
 
+  <!-- زر المفاجأة التحفيزية الذي أرسلته أنت في الكود الأصلي -->
+  <div style="margin: 25px 0;">
+    <button class="btn" onclick="openSecret()" style="background: linear-gradient(110deg, var(--cyan), var(--purple)); color: #08080d; font-weight: 800; box-shadow: 0 0 25px rgba(103,232,249,0.3);" data-i18n="secretMainBtn">
+      ✨ Read an inspiring message for you here
+    </button>
+  </div>
+
   <div class="btn-row">
     <button class="btn" onclick="replay()" data-i18n="replay">↻ REPLAY EXPERIENCE</button>
     <button class="btn secondary" onclick="goTo(4)" data-i18n="review">REVIEW THE JOURNEY</button>
@@ -586,13 +616,22 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 // AUTH SCREEN (التفعيل الذكي عند الدخول)
 // ========================================
 function unlockExperience() {
-  playInteractionSound(900, 'triangle', 0.2);
   const auth = document.getElementById("authScreen");
   auth.classList.add("hidden");
 }
 
 // ========================================
-// AUDIO SYSTEM (Web Audio API with Toggle)
+// SECRET FEATURE (كودك الأصلي تماماً للرسالة التحفيزية)
+// ========================================
+function openSecret() {
+  document.getElementById("secretModal").style.display = "flex";
+}
+function closeSecret() {
+  document.getElementById("secretModal").style.display = "none";
+}
+
+// ========================================
+// AUDIO SYSTEM (كودك الأصلي تماماً)
 // ========================================
 
 let soundEnabled = false;
@@ -623,7 +662,7 @@ function playInteractionSound(freq = 440, type = 'sine', duration = 0.15) {
 }
 
 document.addEventListener('click', (e) => {
-  if(e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.classList.contains('fingerprint-btn')) {
+  if(e.target.tagName === 'BUTTON' || e.target.closest('button')) {
     playInteractionSound(750, 'triangle', 0.1);
   }
 });
@@ -641,7 +680,7 @@ soundBtn.addEventListener("click", () => {
 
 
 // ========================================
-// LANGUAGE SYSTEM
+// LANGUAGE SYSTEM (كودك الأصلي تماماً)
 // ========================================
 
 const translations = {
@@ -653,6 +692,11 @@ authEyebrow:"SECURE ACCESS",
 authTitle:"AI Through My Eyes",
 authSub:"Click fingerprint to authenticate and enter the experience.",
 authHint:"AUTHENTICATION REQUIRED",
+
+secretMainBtn:"✨ Read an inspiring message for you here",
+secretTitle:"Message for You!",
+secretText:"Technology and AI are just the beginning in your hands. Never stop your curiosity, keep exploring, creating, and shaping your own world your way. The future starts right here!",
+secretBtn:"✨ Thank you for your time, best of luck!",
 
 introEyebrow:"AN INTERACTIVE AI EXPERIENCE",
 introText:"Every time you interact with artificial intelligence, something changes in the way you see the world. Discover what remains after the answer.",
@@ -745,6 +789,11 @@ authTitle:"الذكاء الاصطناعي بعيوني",
 authSub:"انقر على البصمة للمصادقة والدخول إلى التجربة.",
 authHint:"مطلوب المصادقة للبدء",
 
+secretMainBtn:"✨ رسالة لك!",
+secretTitle:"رسالة ملهمة لك!",
+secretText:"التقنية والذكاء الاصطناعي في إصرارك وعقلك مجرد بداية.. لا توقف فضولك عند أي حد، فكر، ابتكر، واصنع عالمك الخاص بالطريقة التي تؤمن بها. المستقبل يبدأ من هنا!",
+secretBtn:"✨ شكراً لوقتك",
+
 introEyebrow:"تجربة تفاعلية مع الذكاء الاصطناعي",
 introText:"في كل مرة تتفاعل فيها مع الذكاء الاصطناعي، يتغير شيء ما في طريقة رؤيتك للعالم. اكتشف ما يتبقى بعد الإجابة.",
 start:"ابدأ التجربة",
@@ -832,7 +881,7 @@ surpriseFeedback:" في أنظمة خدمة العملاء الصوتية الح
 
 
 // ========================================
-// EXPERIENCE NAVIGATION
+// EXPERIENCE NAVIGATION (كودك الأصلي تماماً)
 // ========================================
 
 let currentScreen = 0;
@@ -876,7 +925,7 @@ function replay(){
 
 
 // ========================================
-// LANGUAGE SWITCHING
+// LANGUAGE SWITCHING (كودك الأصلي تماماً)
 // ========================================
 
 function setLanguage(lang){
@@ -910,7 +959,7 @@ document.getElementById("langBtn").addEventListener("click",()=>{
 
 
 // ========================================
-// INTERACTIVE DISCOVERY
+// INTERACTIVE DISCOVERY (كودك الأصلي تماماً)
 // ========================================
 
 function reveal(button){
@@ -945,7 +994,7 @@ function revealSurprise(){
 
 
 // ========================================
-// AMBIENT STARFIELD
+// AMBIENT STARFIELD (كودك الأصلي تماماً)
 // ========================================
 
 const canvas = document.getElementById("stars");
@@ -1007,7 +1056,7 @@ drawStars();
 
 
 // ========================================
-// INITIALIZE
+// INITIALIZE (كودك الأصلي تماماً)
 // ========================================
 
 setLanguage("en");
