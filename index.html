@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08080d">
-<meta name="description" content="AFTERIMAGE — AI Through My Eyes. An interactive journey exploring artificial intelligence.">
-<title>AFTERIMAGE — AI Through My Eyes</title>
+<meta name="description" content="ME & THE MACHINE — An interactive journey exploring artificial intelligence.">
+<title>ME & THE MACHINE — AI Through My Eyes</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap');
@@ -60,7 +60,7 @@ header{
 
 .logo{
   font-family:"Space Grotesk",sans-serif;font-size:19px;
-  font-weight:700;letter-spacing:4px; cursor: pointer;
+  font-weight:700;letter-spacing:4px;
 }
 .logo span{color:var(--purple)}
 
@@ -92,8 +92,8 @@ main{position:relative;z-index:2;padding-top:90px}
 }
 
 h1,h2,h3{font-family:"Space Grotesk","Tajawal",sans-serif;line-height:1.15}
-h1{font-size:clamp(55px,11vw,130px);letter-spacing:-5px;font-weight:700}
-h2{font-size:clamp(35px,6vw,65px);letter-spacing:-2px;margin-bottom:22px}
+h1{font-size:clamp(45px,9vw,110px);letter-spacing:-3px;font-weight:700}
+h2{font-size:clamp(30px,5vw,55px);letter-spacing:-2px;margin-bottom:22px}
 h3{font-size:22px;margin-bottom:12px}
 
 p{color:var(--muted);line-height:1.9;font-size:15px}
@@ -105,7 +105,7 @@ p{color:var(--muted);line-height:1.9;font-size:15px}
 
 .hero{position:relative;align-items:center;text-align:center;min-height:calc(100vh - 90px)}
 .hero h1{position:relative;z-index:2}
-.hero-sub{max-width:560px;margin:25px auto 38px}
+.hero-sub{max-width:600px;margin:25px auto 38px}
 
 .hero-visual{
   position:relative;width:250px;height:250px;margin:0 auto 20px;
@@ -144,7 +144,7 @@ p{color:var(--muted);line-height:1.9;font-size:15px}
 .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--text)}
 .btn.secondary:hover{border-color:var(--purple);color:var(--purple);box-shadow:none}
 
-.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px;justify-content:center}
 .center{text-align:center;align-items:center}
 .content{max-width:1050px;width:100%;margin:auto}
 .section-head{max-width:700px;margin-bottom:42px}
@@ -211,15 +211,15 @@ body[dir="rtl"] .quote{
 body[dir="rtl"] .feedback{text-align:right}
 .feedback.show{display:block}
 
-/* تنسيق النافذة السرية التفاعلية الجديدة */
+/* نافذة الرسالة التحفيزية في النهاية */
 #secretModal {
   position: fixed; inset: 0; background: rgba(8,8,13,0.85); backdrop-filter: blur(10px);
   z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px;
 }
 #secretBox {
   background: var(--surface); border: 1px solid var(--purple); border-radius: 20px;
-  max-width: 450px; width: 100%; padding: 30px; text-align: center;
-  box-shadow: 0 0 40px rgba(167,139,250,0.3); animation: fadeIn 0.4s ease;
+  max-width: 500px; width: 100%; padding: 35px; text-align: center;
+  box-shadow: 0 0 50px rgba(167,139,250,0.35); animation: fadeIn 0.4s ease;
 }
 
 .progress-wrap{
@@ -300,21 +300,23 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <canvas id="stars"></canvas>
 <div class="noise"></div>
 
-<!-- نافذة السر التفاعلية الممتعة -->
+<!-- نافذة الرسالة التحفيزية للزائر في نهاية الموقع -->
 <div id="secretModal">
   <div id="secretBox">
-    <div style="font-size: 30px; margin-bottom: 15px;">✨</div>
-    <h3 style="color:var(--purple); margin-bottom: 10px;">Hidden AI Easter Egg!</h3>
-    <p style="font-size: 14px; margin-bottom: 20px;">You discovered the hidden layer of AFTERIMAGE. Remember: The tool is artificial, but your curiosity makes it real.</p>
-    <button class="btn" onclick="closeSecret()" style="padding: 10px 20px; font-size: 12px;">CLOSE / إغلاق</button>
+    <div style="font-size: 35px; margin-bottom: 15px;">🚀</div>
+    <h3 style="color:var(--purple); margin-bottom: 12px; font-size: 20px;" data-i18n="secretTitle">رسالة ملهمة لك!</h3>
+    <p style="font-size: 14px; margin-bottom: 25px; color: var(--muted); line-height: 1.9;" data-i18n="secretText">
+      التقنية والذكاء الاصطناعي في إصرارك وعقلك مجرد بداية.. لا توقف فضولك عند أي حد، فكر، ابتكر، واصنع عالمك الخاص بالطريقة التي تؤمن بها. المستقبل يبدأ من هنا!
+    </p>
+    <button class="btn" onclick="closeSecret()" style="padding: 10px 30px; font-size: 13px;" data-i18n="secretBtn">حسناً، لننطلق!</button>
   </div>
 </div>
 
 <header>
-  <div class="logo" onclick="triggerSecret()" title="Click me 3 times!">AFTER<span>IMAGE</span></div>
+  <div class="logo">ME & <span>THE MACHINE</span></div>
   <div class="header-right">
-    <div class="header-label" data-i18n="headerLabel">AI THROUGH MY EYES</div>
-    <button class="header-btn" id="soundBtn" aria-label="Toggle Sound">🔇 MUTE</button>
+    <div class="header-label" data-i18n="headerLabel">رحلة استكشافية جريئة</div>
+    <button class="header-btn" id="soundBtn" aria-label="Toggle Sound">🔇 صامت</button>
     <button class="header-btn" id="langBtn" aria-label="Switch language">AR</button>
   </div>
 </header>
@@ -323,50 +325,48 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 
 <!-- SCREEN 0 : INTRO -->
 <section class="screen active hero" id="screen0">
-  <div class="eyebrow" data-i18n="introEyebrow">AN INTERACTIVE AI EXPERIENCE</div>
+  <div class="eyebrow" data-i18n="introEyebrow">تجارب رقمية من عوالم المستقبل</div>
   <div class="hero-visual"><div class="orb"></div></div>
-  <h1 class="gradient">AFTERIMAGE</h1>
+  <h1 class="gradient">ME & THE MACHINE</h1>
   <p class="hero-sub" data-i18n="introText">
-    Every time you interact with artificial intelligence,
-    something changes in the way you see the world.
-    Discover what remains after the answer.
+    مو مجرد شاشة كود أو أدوات ذكية عادية.. هنا نشوف كيف يغير الذكاء الاصطناعي طريقة تفكيرنا وعالمنا اليوم. اضغط وابدأ الرحلة!
   </p>
   <button class="btn" onclick="goTo(1)">
-    <span data-i18n="start">START EXPERIENCE</span><span>↗</span>
+    <span data-i18n="start">ابدأ الاستكشاف</span><span>↗</span>
   </button>
-  <footer data-i18n="introFooter">EXPLORE · UNDERSTAND · CREATE</footer>
+  <footer data-i18n="introFooter">اكتشف · تفاعل · اصنع الأثر</footer>
 </section>
 
 <!-- SCREEN 1 : MY DEFINITION -->
 <section class="screen" id="screen1">
   <div class="content">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="s1Eyebrow">01 / AI IN MY WORDS</div>
-      <h2 data-i18n="s1Title">More than a machine. <span class="gradient">A new way to create.</span></h2>
+      <div class="eyebrow" data-i18n="s1Eyebrow">01 / الذكاء الاصطناعي بعيوني</div>
+      <h2 data-i18n="s1Title">مو مجرد آلة صماء. <span class="gradient">هوه مساحة للخيال.</span></h2>
       <p data-i18n="s1Text">
-        To me, artificial intelligence is a tool that learns patterns from data and uses them to help us solve problems, explore ideas, and create things we could not imagine before.
+        بالنسبة لي، الذكاء الاصطناعي مو شاشات ذكية وخوارزميات معقدة، هو أشبه بمرآة تاخذ أفكارنا وتعطيها طاقة عشان تتشكل بطرق ما كنا نتخيلها أبداً.
       </p>
     </div>
 
     <div class="quote">
-      <strong data-i18n="s1Quote">AI is not a replacement for human imagination. It is a new space where imagination can grow.</strong>
+      <strong data-i18n="s1Quote">الآلة تفكر بالبيانات، لكن الإحساس والإبداع الحقيقي دائماً طالعين مننا حنا البشر.</strong>
     </div>
 
     <div class="interactive-box">
-      <div class="mini-label" data-i18n="s1Prompt">WHAT DO YOU THINK?</div>
-      <h3 data-i18n="s1Question">Is AI a tool, a partner, or something else?</h3>
+      <div class="mini-label" data-i18n="s1Prompt">وش رأيك بصراحة؟</div>
+      <h3 data-i18n="s1Question">الذكاء الاصطناعي بالنسبة لك وش يعتبر؟</h3>
       <div class="options">
-        <button class="option" onclick="chooseMeaning(0)" data-i18n="meaning0">A powerful tool</button>
-        <button class="option" onclick="chooseMeaning(1)" data-i18n="meaning1">A creative partner</button>
-        <button class="option" onclick="chooseMeaning(2)" data-i18n="meaning2">Both, and more</button>
+        <button class="option" onclick="chooseMeaning(0)" data-i18n="meaning0">أداة جبّارة وسريعة</button>
+        <button class="option" onclick="chooseMeaning(1)" data-i18n="meaning1">شريك إبداعي فنان</button>
+        <button class="option" onclick="chooseMeaning(2)" data-i18n="meaning2">اثنينهم وأكثر بكثير</button>
       </div>
       <div class="feedback" id="meaningFeedback"></div>
     </div>
 
     <div class="nav-controls">
-      <button class="btn secondary" onclick="goTo(0)"><span>←</span><span data-i18n="back">BACK</span></button>
+      <button class="btn secondary" onclick="goTo(0)"><span>←</span><span data-i18n="back">السابق</span></button>
       <div class="step-label">01 / 04</div>
-      <button class="btn" onclick="goTo(2)"><span data-i18n="next">NEXT</span><span>→</span></button>
+      <button class="btn" onclick="goTo(2)"><span data-i18n="next">التالي</span><span>→</span></button>
     </div>
   </div>
 </section>
@@ -375,46 +375,46 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <section class="screen" id="screen2">
   <div class="content">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="s2Eyebrow">02 / AI AROUND US</div>
-      <h2 data-i18n="s2Title">It's closer than <span class="gradient">you think.</span></h2>
+      <div class="eyebrow" data-i18n="s2Eyebrow">02 / الذكاء الاصطناعي حولنا</div>
+      <h2 data-i18n="s2Title">أقرب لك بكثير <span class="gradient">مما تتخيل.</span></h2>
       <p data-i18n="s2Text">
-        AI is not only found in futuristic robots. It is already part of the ordinary moments that shape our everyday lives. Explore three examples.
+        مو لازم نروح مستقبل عشان نشوفه؛ هو موجود معنا بكل لحظة بيومنا. تعال شوف كيف يشتغل في 3 أشياء نستخدمها دايم:
       </p>
     </div>
 
     <div class="cards">
       <article class="card">
-        <div class="card-number">01 / PERSONALIZATION</div>
+        <div class="card-number">01 / RECOMMENDATIONS</div>
         <span class="card-icon">◈</span>
-        <h3 data-i18n="app1Title">Recommendation Systems</h3>
-        <p data-i18n="app1Text">Streaming platforms use AI to suggest movies, music, and content based on patterns in your activity and preferences.</p>
-        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">DISCOVER THE MECHANISM ↗</button>
-        <div class="reveal-content" data-i18n="app1Reveal">AI analyzes signals such as viewing history and interactions to estimate what you may enjoy next. These are predictions, not certainties.</div>
+        <h3 data-i18n="app1Title">تطبيقات التوصية</h3>
+        <p data-i18n="app1Text">منصات الأفلام والموسيقى تقرأ جوك واهتماماتك وتعرف وش بيعجبك قبل حتى ما تدور عليه.</p>
+        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">شوف وشلون يشتغل ↗</button>
+        <div class="reveal-content" data-i18n="app1Reveal">يحلل سجلك وتفاعلاتك السابقة ليتوقع ذوقك القادم. تظل توقعات ذكية مو أشياء مؤكدة 100%.</div>
       </article>
 
       <article class="card">
-        <div class="card-number">02 / COMPUTER VISION</div>
+        <div class="card-number">02 / VISION</div>
         <span class="card-icon">◎</span>
-        <h3 data-i18n="app2Title">Smart Cameras</h3>
-        <p data-i18n="app2Text">AI systems can analyze images to identify objects, recognize patterns, and support tasks such as image classification.</p>
-        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">DISCOVER THE MECHANISM ↗</button>
-        <div class="reveal-content" data-i18n="app2Reveal">A vision model processes visual information and uses learned patterns to estimate what appears in an image. Its output can still be wrong.</div>
+        <h3 data-i18n="app2Title">الكاميرات الذكية</h3>
+        <p data-i18n="app2Text">الأنظمة صارت تلقط الصور، تتعرف على الوجوه والأشياء، وتصنفها بدقة خيالية في أجزاء من الثانية.</p>
+        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">شوف وشلون يشتغل ↗</button>
+        <div class="reveal-content" data-i18n="app2Reveal">تعالج البيانات البصرية وتقارنها بالأنماط اللي تدربت عليها، ومع ذلك أحياناً تخطئ بالتفسير!</div>
       </article>
 
       <article class="card">
         <div class="card-number">03 / LANGUAGE</div>
         <span class="card-icon">✳</span>
-        <h3 data-i18n="app3Title">AI Assistants</h3>
-        <p data-i18n="app3Text">Language models help people brainstorm, summarize information, translate text, and generate responses.</p>
-        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">DISCOVER THE MECHANISM ↗</button>
-        <div class="reveal-content" data-i18n="app3Reveal">Language models learn patterns in language and generate text based on the prompt and context. Their answers need evaluation.</div>
+        <h3 data-i18n="app3Title">المساعدات الذكية</h3>
+        <p data-i18n="app3Text">تساعدنا نولد أفكار، نلخص كتب، نترجم لغات، ونسولف معها كأنها شخص حقيقي.</p>
+        <button class="reveal-btn" onclick="reveal(this)" data-i18n="discover">شوف وشلون يشتغل ↗</button>
+        <div class="reveal-content" data-i18n="app3Reveal">تتعلم أنماط الجمل والكلمات وتربط السياق ببعضه عشان تعطيك إجابة مرتبة تحتاج تدقيقك.</div>
       </article>
     </div>
 
     <div class="nav-controls">
-      <button class="btn secondary" onclick="goTo(1)">← <span data-i18n="back">BACK</span></button>
+      <button class="btn secondary" onclick="goTo(1)">← <span data-i18n="back">السابق</span></button>
       <div class="step-label">02 / 04</div>
-      <button class="btn" onclick="goTo(3)"><span data-i18n="next">NEXT</span> →</button>
+      <button class="btn" onclick="goTo(3)"><span data-i18n="next">التالي</span> →</button>
     </div>
   </div>
 </section>
@@ -423,35 +423,35 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <section class="screen" id="screen3">
   <div class="content">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="s3Eyebrow">03 / WHAT SURPRISED ME</div>
-      <h2 data-i18n="s3Title">When machines begin to <span class="gradient">understand human emotions.</span></h2>
+      <div class="eyebrow" data-i18n="s3Eyebrow">03 / وش اللي أثار فضولي؟</div>
+      <h2 data-i18n="s3Title">لما تبدأ الآلات <span class="gradient">تفهم مشاعرنا!</span></h2>
       <p data-i18n="s3Text">
-        What genuinely sparked my curiosity is how artificial intelligence can analyze tone of voice, hesitation, and expressions to detect human feelings—even though it has no feelings of its own.
+        أكثر شي صدق صدمني هو إن الذكاء الاصطناعي صار يحلل نبرات صوتك وسرعة كلامك عشان يعرف مزاجك، مع إنه جماد ما يحس أبداً!
       </p>
     </div>
 
     <div class="surprise-card">
-      <div class="mini-label" data-i18n="surpriseLabel">FASCINATING CAPABILITY</div>
+      <div class="mini-label" data-i18n="surpriseLabel">موقف مذهل</div>
       <div class="surprise-number">✨</div>
-      <h3 data-i18n="surpriseTitle">Reading Between the <span>Digital Lines</span></h3>
+      <h3 data-i18n="surpriseTitle">القراءة بين <span>السطور الصوتية</span></h3>
       <p data-i18n="surpriseText">
-        Have you ever noticed how voice assistants or smart support bots can tell if you are frustrated just by how fast or loud you speak? They don't have ears or hearts, yet they map human micro-expressions and tone shifts instantly.
+        لاحظت كيف أن مساعدات الصوت أو خدمة العملاء الذكية تعرف فوراً إنك معصب أو مستعجل من طريقة كلامك؟ هي ما عندها قلب، بس تعرف تقرأ تفاصيل النبرة وتتفاعل معك بناءً عليها.
       </p>
 
       <div class="quote">
         <strong data-i18n="surpriseQuote">
-          "It is bizarrely fascinating: a non-living algorithm can sense human mood better than some people do."
+          "شي غريب ورهيب: خوارزمية صماء تلقط مزاج الإنسان بدقة تتفوق أحياناً على البشر!"
         </strong>
       </div>
 
-      <button class="btn" onclick="revealSurprise()" data-i18n="surpriseBtn">REVEAL REAL-WORLD EXAMPLE</button>
+      <button class="btn" onclick="revealSurprise()" data-i18n="surpriseBtn">شوف المثال الواقعي</button>
       <div class="feedback" id="surpriseFeedback"></div>
     </div>
 
     <div class="nav-controls">
-      <button class="btn secondary" onclick="goTo(2)">← <span data-i18n="back">BACK</span></button>
+      <button class="btn secondary" onclick="goTo(2)">← <span data-i18n="back">السابق</span></button>
       <div class="step-label">03 / 04</div>
-      <button class="btn" onclick="goTo(4)"><span data-i18n="next">NEXT</span> →</button>
+      <button class="btn" onclick="goTo(4)"><span data-i18n="next">التالي</span> →</button>
     </div>
   </div>
 </section>
@@ -460,10 +460,10 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <section class="screen" id="screen4">
   <div class="content">
     <div class="section-head">
-      <div class="eyebrow" data-i18n="s4Eyebrow">04 / HOW AI HELPED ME</div>
-      <h2 data-i18n="s4Title">The tool helped. <span class="gradient">The vision was mine.</span></h2>
+      <div class="eyebrow" data-i18n="s4Eyebrow">04 / كيف ساعدني الذكاء الاصطناعي؟</div>
+      <h2 data-i18n="s4Title">الأداة ساعدتني. <span class="gradient">بس الفكرة فكرتي.</span></h2>
       <p data-i18n="s4Text">
-        AI became part of my creative process. But the experience was shaped through my own decisions, direction, and review.
+        دخلت الذكاء الاصطناعي كشريك في رحلة البناء، لكن كل لمسة، اختيار، وتوجيه كان بقراري ومساتي الخاصة.
       </p>
     </div>
 
@@ -472,45 +472,45 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
         <div class="card-number">01 / THE TOOL</div>
         <span class="card-icon">✧</span>
         <h3 data-i18n="toolTitle">ChatGPT</h3>
-        <p data-i18n="toolText">I used ChatGPT to explore ideas, organize the content, develop the experience structure, and assist with the website code.</p>
+        <p data-i18n="toolText">استخدمته عشان أرتب أفكاري، أصيغ المحتوى، وأساعدني في كتابة وتنسيق كود الموقع وتوزيع الشاشات.</p>
         <div style="margin-top:20px">
           <span class="tool-tag">ChatGPT</span>
-          <span class="tool-tag">AI-assisted creation</span>
+          <span class="tool-tag">شريك تقني</span>
         </div>
       </article>
 
       <article class="card">
-        <div class="card-number">02 / MY CONTRIBUTION</div>
+        <div class="card-number">02 / MY ROLE</div>
         <span class="card-icon">✦</span>
-        <h3 data-i18n="contributionTitle">My Creative Role</h3>
-        <p data-i18n="contributionText">I chose the concept, directed the visual style, selected the content, reviewed the generated material, and refined the experience.</p>
+        <h3 data-i18n="contributionTitle">دوري الإبداعي</h3>
+        <p data-i18n="contributionText">اخترت الفكرة من الصفر، حددت الهوية البصرية، دققت المحتوى، وعدلت كل تفصيلة لين طلع بهذا الشكل.</p>
         <div class="contribution-list">
-          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution1">Choosing the concept and experience direction.</p></div>
-          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution2">Reviewing the content and improving clarity.</p></div>
-          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution3">Designing the navigation and interactive flow.</p></div>
+          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution1">ابتكار الفكرة وتوجيه مسار التجربة.</p></div>
+          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution2">مراجعة النصوص وصقلها بأسلوبي الخاص.</p></div>
+          <div class="contribution-item"><span class="check">✓</span><p data-i18n="contribution3">تصميم حركة التنقل وتجربة المستخدم.</p></div>
         </div>
       </article>
 
       <article class="card">
         <div class="card-number">03 / THE PROCESS</div>
         <span class="card-icon">⌘</span>
-        <h3 data-i18n="processTitle">From Idea to Experience</h3>
-        <p data-i18n="processText">I combined AI-assisted development with my own creative direction to create an interactive experience that communicates my understanding of artificial intelligence.</p>
+        <h3 data-i18n="processTitle">من الفكرة للواقع</h3>
+        <p data-i18n="processText">دمجت البرمجة المدعومة بالذكاء الاصطناعي مع توجيهي الشخصي عشان أطلع بتجربة رقمية حية تعكس رؤيتي صدق.</p>
         <div style="margin-top:20px">
-          <span class="tool-tag">HTML</span>
-          <span class="tool-tag">CSS</span>
+          <span class="tool-tag">HTML5</span>
+          <span class="tool-tag">CSS3</span>
           <span class="tool-tag">JavaScript</span>
           <span class="tool-tag">GitHub Pages</span>
         </div>
       </article>
     </div>
 
-    <div class="quote"><strong data-i18n="s4Quote">AI helped me build the experience. My choices gave it meaning.</strong></div>
+    <div class="quote"><strong data-i18n="s4Quote">الذكاء الاصطناعي بنى لي الأداة، بس اختياراتي هي اللي عطتها المعنى!</strong></div>
 
     <div class="nav-controls">
-      <button class="btn secondary" onclick="goTo(3)">← <span data-i18n="back">BACK</span></button>
+      <button class="btn secondary" onclick="goTo(3)">← <span data-i18n="back">السابق</span></button>
       <div class="step-label">04 / 04</div>
-      <button class="btn" onclick="goTo(5)"><span data-i18n="finish">FINISH</span> →</button>
+      <button class="btn" onclick="goTo(5)"><span data-i18n="finish">انهاء</span> →</button>
     </div>
   </div>
 </section>
@@ -518,13 +518,13 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <!-- SCREEN 5 : END -->
 <section class="screen hero center" id="screen5">
   <div class="final-orb"></div>
-  <div class="eyebrow" data-i18n="endEyebrow">YOU HAVE REACHED THE AFTERIMAGE</div>
-  <h2 data-i18n="endTitle">What remains <span class="gradient">is yours.</span></h2>
+  <div class="eyebrow" data-i18n="endEyebrow">وصلت لنهاية التجربة</div>
+  <h2 data-i18n="endTitle">الأثر اللي يتبقى <span class="gradient">هو حقك أنت.</span></h2>
   <p class="hero-sub" data-i18n="endText">
-    Artificial intelligence can transform the way we create, learn, and explore. But the meaning we give to that experience is still human.
+    التقنية ممكن تغير طريقة شغلنا وتعلمنا، بس الإحساس والمعنى اللي نتركه ورا الإجابة يظل إنساني بحت.
   </p>
   
-  <!-- قسم المصادر مع روابط حقيقية قابلة للنقر والتأكد منها -->
+  <!-- قسم المصادر المعتمدة -->
   <div style="max-width:800px;width:100%;margin:40px auto 20px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;" dir="ltr">
     <div class="mini-label" style="margin-bottom:10px;color:var(--purple);" data-i18n="sourcesLabel">REFERENCES & SOURCES</div>
     <h3 style="font-size:18px;margin-bottom:15px;" data-i18n="sourcesTitle">Key Research & Documentation</h3>
@@ -536,13 +536,21 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
   </div>
 
   <div class="quote" style="max-width:600px">
-    <strong data-i18n="endQuote">The tool is artificial. The curiosity is real.</strong>
+    <strong data-i18n="endQuote">الأداة اصطناعية.. بس الفضول والشغف حقيقيين!</strong>
   </div>
+
+  <!-- زر المفاجأة التحفيزية الواضح في آخر الموقع -->
+  <div style="margin: 25px 0;">
+    <button class="btn" onclick="openSecret()" style="background: linear-gradient(110deg, var(--cyan), var(--purple)); color: #08080d; font-weight: 800; box-shadow: 0 0 25px rgba(103,232,249,0.3);">
+      🚀 اضغط هنا لرسالة ملهمة لك
+    </button>
+  </div>
+
   <div class="btn-row">
-    <button class="btn" onclick="replay()" data-i18n="replay">↻ REPLAY EXPERIENCE</button>
-    <button class="btn secondary" onclick="goTo(4)" data-i18n="review">REVIEW THE JOURNEY</button>
+    <button class="btn" onclick="replay()" data-i18n="replay">↻ أعِد التجربة</button>
+    <button class="btn secondary" onclick="goTo(4)" data-i18n="review">راجع الرحلة</button>
   </div>
-  <footer data-i18n="endFooter">AI THROUGH MY EYES · END OF EXPERIENCE</footer>
+  <footer data-i18n="endFooter">ME & THE MACHINE · نهاية التجربة</footer>
 </section>
 
 </main>
@@ -550,7 +558,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <!-- PROGRESS + NAVIGATION -->
 <div class="progress-wrap">
   <div class="progress-top">
-    <span id="progressLabel">EXPLORING THE UNKNOWN</span>
+    <span id="progressLabel">رحلة استكشاف المجهول</span>
     <span id="progressNumber">00 / 05</span>
   </div>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
@@ -559,15 +567,10 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 <script>
 
 // ========================================
-// EASTER EGG: SECRET INTERACTIVE FEATURE
+// SECRET FEATURE (زر الرسالة الملهمة في النهاية)
 // ========================================
-let clickCount = 0;
-function triggerSecret() {
-  clickCount++;
-  if (clickCount >= 3) {
-    document.getElementById("secretModal").style.display = "flex";
-    clickCount = 0;
-  }
+function openSecret() {
+  document.getElementById("secretModal").style.display = "flex";
 }
 function closeSecret() {
   document.getElementById("secretModal").style.display = "none";
@@ -629,75 +632,79 @@ soundBtn.addEventListener("click", () => {
 const translations = {
 
 en:{
-headerLabel:"AI THROUGH MY EYES",
+headerLabel:"A BOLD EXPLORATION",
 
-introEyebrow:"AN INTERACTIVE AI EXPERIENCE",
-introText:"Every time you interact with artificial intelligence, something changes in the way you see the world. Discover what remains after the answer.",
-start:"START EXPERIENCE",
-introFooter:"EXPLORE · UNDERSTAND · CREATE",
+secretTitle:"An Inspiring Message for You!",
+secretText:"Technology and AI are just the beginning in your hands. Never stop your curiosity, keep exploring, creating, and shaping your own world your way. The future starts right here!",
+secretBtn:"Got it, Let's Go!",
 
-s1Eyebrow:"01 / AI IN MY WORDS",
-s1Title:'More than a machine. <span class="gradient">A new way to create.</span>',
-s1Text:"To me, artificial intelligence is a tool that learns patterns from data and uses them to help us solve problems, explore ideas, and create things we could not imagine before.",
-s1Quote:"AI is not a replacement for human imagination. It is a new space where imagination can grow.",
-s1Prompt:"WHAT DO YOU THINK?",
-s1Question:"Is AI a tool, a partner, or something else?",
-meaning0:"A powerful tool",
+introEyebrow:"DIGITAL EXPERIENCES FROM THE FUTURE",
+introText:"Not just a code or regular AI tools.. Here we see how artificial intelligence changes the way we think and experience our world. Click to start!",
+start:"START JOURNEY",
+introFooter:"EXPLORE · INTERACT · CREATE IMPACT",
+
+s1Eyebrow:"01 / AI THROUGH MY EYES",
+s1Title:'More than a machine. <span class="gradient">A space for imagination.</span>',
+s1Text:"To me, artificial intelligence isn't just cold algorithms or smart screens; it's a mirror that captures our ideas and powers them to take shapes we never imagined.",
+s1Quote:"The machine thinks in data, but true feeling and creativity always come from us humans.",
+s1Prompt:"WHAT DO YOU TRULY THINK?",
+s1Question:"What does AI mean to you?",
+meaning0:"A powerful, fast tool",
 meaning1:"A creative partner",
-meaning2:"Both, and more",
+meaning2:"Both and much more",
 
 s2Eyebrow:"02 / AI AROUND US",
-s2Title:'It is closer than <span class="gradient">you think.</span>',
-s2Text:"AI is not only found in futuristic robots. It is already part of the ordinary moments that shape our everyday lives. Explore three examples.",
+s2Title:'Closer than you <span class="gradient">think.</span>',
+s2Text:"You don't need a futuristic sci-fi lab to see it; it's right there in our daily moments. Let's look at 3 everyday things:",
 
 app1Title:"Recommendation Systems",
-app1Text:"Streaming platforms use AI to suggest movies, music, and content based on patterns in your activity and preferences.",
-app1Reveal:"AI analyzes signals such as viewing history and interactions to estimate what you may enjoy next. These are predictions, not certainties.",
+app1Text:"Streaming and music platforms read your mood and preferences to suggest what you'll enjoy next.",
+app1Reveal:"It analyzes past logs and interactions to predict your next vibe. They remain smart predictions, not 100% certainties.",
 
 app2Title:"Smart Cameras",
-app2Text:"AI systems can analyze images to identify objects, recognize patterns, and support tasks such as image classification.",
-app2Reveal:"A vision model processes visual information and uses learned patterns to estimate what appears in an image. Its output can still be wrong.",
+app2Text:"Vision systems capture images, recognize faces, and classify objects instantly in milliseconds.",
+app2Reveal:"It processes visual info and compares it to trained patterns—yet vision models can still misinterpret outputs!",
 
 app3Title:"AI Assistants",
-app3Text:"Language models help people brainstorm, summarize information, translate text, and generate responses.",
-app3Reveal:"Language models learn patterns in language and generate text based on the prompt and context. Their answers need evaluation.",
+app3Text:"Language models help brainstorm ideas, summarize texts, translate languages, and chat like a real person.",
+app3Reveal:"They learn language patterns and stitch context together to generate structured text that still needs human review.",
 
 discover:"DISCOVER THE MECHANISM ↗",
 
 s3Eyebrow:"03 / WHAT SURPRISED ME",
-s3Title:'When machines begin to <span class="gradient">understand human emotions.</span>',
-s3Text:"What genuinely sparked my curiosity is how artificial intelligence can analyze tone of voice, hesitation, and expressions to detect human feelings—even though it has no feelings of its own.",
+s3Title:'When machines start to <span class="gradient">sense human emotions.</span>',
+s3Text:"What genuinely shocked me is how AI can analyze voice tones and speech speed to detect human mood, even though it feels nothing!",
 surpriseLabel:"FASCINATING CAPABILITY",
-surpriseTitle:"Reading Between the <span>Digital Lines</span>",
-surpriseText:"Have you ever noticed how voice assistants or smart support bots can tell if you are frustrated just by how fast or loud you speak? They don't have ears or hearts, yet they map human micro-expressions and tone shifts instantly.",
-surpriseQuote:"\"It is bizarrely fascinating: a non-living algorithm can sense human mood better than some people do.\"",
+surpriseTitle:"Reading Between <span>Acoustic Lines</span>",
+surpriseText:"Ever noticed how voice assistants or support bots instantly catch if you're annoyed or hurried just by how fast you speak? They have no heart, yet they map tone shifts instantly.",
+surpriseQuote:"\"It's bizarrely fascinating: a blank algorithm captures human mood with startling accuracy.\"",
 surpriseBtn:"REVEAL REAL-WORLD EXAMPLE",
 
 s4Eyebrow:"04 / HOW AI HELPED ME",
 s4Title:'The tool helped. <span class="gradient">The vision was mine.</span>',
-s4Text:"AI became part of my creative process. But the experience was shaped through my own decisions, direction, and review.",
+s4Text:"AI joined as a creative partner in the building process, but every touch, decision, and direction belonged entirely to me.",
 
 toolTitle:"ChatGPT",
-toolText:"I used ChatGPT to explore ideas, organize the content, develop the experience structure, and assist with the website code.",
+toolText:"I used ChatGPT to organize ideas, shape content, and assist with coding and layout distribution.",
 
 contributionTitle:"My Creative Role",
-contributionText:"I chose the concept, directed the visual style, selected the content, reviewed the generated material, and refined the experience.",
-contribution1:"Choosing the concept and experience direction.",
-contribution2:"Reviewing the content and improving clarity.",
-contribution3:"Designing the navigation and interactive flow.",
+contributionText:"I chose the concept from scratch, set the visual identity, curated content, and polished every detail.",
+contribution1:"Inventing the core idea and journey path.",
+contribution2:"Reviewing and refining texts in my unique voice.",
+contribution3:"Designing interactive navigation flows and UX.",
 
-processTitle:"From Idea to Experience",
-processText:"I combined AI-assisted development with my own creative direction to create an interactive experience that communicates my understanding of artificial intelligence.",
+processTitle:"From Idea to Reality",
+processTest:"I combined AI-assisted coding with my personal direction to craft a live digital experience reflecting my real vision.",
 
-s4Quote:"AI helped me build the experience. My choices gave it meaning.",
+s4Quote:"AI built the tool, but my choices gave it actual meaning!",
 
-endEyebrow:"YOU HAVE REACHED THE AFTERIMAGE",
+endEyebrow:"JOURNEY COMPLETE",
 endTitle:'What remains <span class="gradient">is yours.</span>',
-endText:"Artificial intelligence can transform the way we create, learn, and explore. But the meaning we give to that experience is still human.",
-endQuote:"The tool is artificial. The curiosity is real.",
+endText:"Technology might change how we work and learn, but the meaning we give to those experiences remains purely human.",
+endQuote:"The tool is artificial.. but curiosity and passion are real!",
 replay:"↻ REPLAY EXPERIENCE",
-review:"REVIEW THE JOURNEY",
-endFooter:"AI THROUGH MY EYES · END OF EXPERIENCE",
+review:"REVIEW JOURNEY",
+endFooter:"ME & THE MACHINE · END OF EXPERIENCE",
 
 sourcesLabel:"REFERENCES & SOURCES",
 sourcesTitle:"Key Research & Documentation",
@@ -707,95 +714,99 @@ next:"NEXT",
 finish:"FINISH",
 progress:"EXPLORING THE UNKNOWN",
 
-meaningFeedback0:"AI can be a powerful tool, helping us extend our abilities while leaving the decisions to us.",
-meaningFeedback1:"AI can act as a creative collaborator, offering possibilities that we can evaluate and reshape.",
-meaningFeedback2:"AI can be a tool and a creative partner, but human judgment remains essential.",
+meaningFeedback0:"AI can act as a powerful tool extending capabilities while keeping major decisions in our hands.",
+meaningFeedback1:"AI can act as a creative collaborator offering possibilities we evaluate and reshape.",
+meaningFeedback2:"AI is both a tool and a partner, but human judgment remains essential.",
 
-surpriseFeedback:"Real-World Example: In modern customer service systems or voice AI, models analyze the acoustics of your voice—such as pitch spikes and speech speed—to detect if you are calm, angry, or confused, then adjust their tone and assistance style accordingly. It makes you realize how patterns can simulate empathy!"
+surpriseFeedback:"Real-World Example: In advanced voice customer service systems, models analyze voice frequency and spikes to tell if a caller is calm, angry, or confused, then dynamically adjust their tone to assist better. It shows how patterns simulate empathy!"
 },
 
 ar:{
-headerLabel:"الذكاء الاصطناعي كما أراه",
+headerLabel:"رحلة استكشافية جريئة",
 
-introEyebrow:"تجربة تفاعلية عن الذكاء الاصطناعي",
-introText:"في كل مرة تتفاعلين فيها مع الذكاء الاصطناعي، قد يتغير شيء في طريقة رؤيتك للعالم. اكتشفي الأثر الذي يبقى بعد الإجابة.",
-start:"ابدئي التجربة",
-introFooter:"اكتشفي · افهمي · أبدعي",
+secretTitle:"رسالة ملهمة لك!",
+secretText:"التقنية والذكاء الاصطناعي في إصرارك وعقلك مجرد بداية.. لا توقف فضولك عند أي حد، فكر، ابتكر، واصنع عالمك الخاص بالطريقة التي تؤمن بها. المستقبل يبدأ من هنا!",
+secretBtn:"حسناً، لننطلق!",
 
-s1Eyebrow:"01 / الذكاء الاصطناعي بكلماتي",
-s1Title:'أكثر من مجرد آلة. <span class="gradient">طريقة جديدة للإبداع.</span>',
-s1Text:"بالنسبة لي، الذكاء الاصطناعي أداة تتعلم الأنماط من البيانات، وتستخدمها لمساعدتنا في حل المشكلات، واستكشاف الأفكار، وصناعة أشياء لم نكن نتخيلها من قبل.",
-s1Quote:"الذكاء الاصطناعي ليس بديلًا عن الخيال البشري، بل مساحة جديدة يمكن أن ينمو فيها هذا الخيال.",
-s1Prompt:"وش رأيك؟",
-s1Question:"هل الذكاء الاصطناعي أداة، أم شريك، أم شيء آخر؟",
-meaning0:"أداة قوية",
-meaning1:"شريك إبداعي",
-meaning2:"كلاهما وأكثر",
+introEyebrow:"تجارب رقمية من عوالم المستقبل",
+introText:"مو مجرد شاشة كود أو أدوات ذكية عادية.. هنا نشوف كيف يغير الذكاء الاصطناعي طريقة تفكيرنا وعالمنا اليوم. اضغط وابدأ الرحلة!",
+start:"ابدأ الاستكشاف",
+introFooter:"اكتشف · تفاعل · اصنع الأثر",
+
+s1Eyebrow:"01 / الذكاء الاصطناعي بعيوني",
+s1Title:'مو مجرد آلة صماء. <span class="gradient">هوه مساحة للخيال.</span>',
+s1Text:"بالنسبة لي، الذكاء الاصطناعي مو شاشات ذكية وخوارزميات معقدة، هو أشبه بمرآة تاخذ أفكارنا وتعطيها طاقة عشان تتشكل بطرق ما كنا نتخيلها أبداً.",
+s1Quote:"الآلة تفكر بالبيانات، لكن الإحساس والإبداع الحقيقي دائماً طالعين مننا حنا البشر.",
+s1Prompt:"وش رأيك بصراحة؟",
+s1Question:"الذكاء الاصطناعي بالنسبة لك وش يعتبر؟",
+meaning0:"أداة جبّارة وسريعة",
+meaning1:"شريك إبداعي فنان",
+meaning2:"اثنينهم وأكثر بكثير",
 
 s2Eyebrow:"02 / الذكاء الاصطناعي حولنا",
-s2Title:'أقرب إليكِ مما <span class="gradient">تتخيلين.</span>',
-s2Text:"الذكاء الاصطناعي ليس محصورًا في الروبوتات المستقبلية. إنه حاضر بالفعل في تفاصيل حياتنا اليومية. اكتشفي ثلاثة أمثلة.",
+s2Title:'أقرب لك بكثير <span class="gradient">مما تتخيل.</span>',
+s2Text:"مو لازم نروح مستقبل عشان نشوفه؛ هو موجود معنا بكل لحظة بيومنا. تعال شوف كيف يشتغل في 3 أشياء نستخدمها دايم:",
 
-app1Title:"أنظمة التوصية",
-app1Text:"تستخدم منصات المشاهدة الذكاء الاصطناعي لاقتراح الأفلام والموسيقى والمحتوى بناءً على أنماط نشاطك واهتماماتك.",
-app1Reveal:"تحلل الأنظمة إشارات مثل سجل المشاهدة والتفاعلات لتقدير ما قد يعجبك لاحقًا. إنها توقعات وليست حقائق مؤكدة.",
+app1Title:"تطبيقات التوصية",
+app1Text:"منصات الأفلام والموسيقى تقرأ جوك واهتماماتك وتعرف وش بيعجبك قبل حتى ما تدور عليه.",
+app1Reveal:"يحلل سجلك وتفاعلاتك السابقة ليتوقع ذوقك القادم. تظل توقعات ذكية مو أشياء مؤكدة 100%.",
 
 app2Title:"الكاميرات الذكية",
-app2Text:"يمكن لأنظمة الذكاء الاصطناعي تحليل الصور للتعرف على الأشياء والأنماط، والمساعدة في مهام مثل تصنيف الصور.",
-app2Reveal:"يعالج نموذج الرؤية المعلومات البصرية ويستخدم الأنماط التي تعلمها لتقدير ما يظهر في الصورة. وقد تكون النتيجة خاطئة.",
+app2Text:"الأنظمة صارت تلقط الصور، تتعرف على الوجوه والأشياء، وتصنفها بدقة خيالية في أجزاء من الثانية.",
+app2Reveal:"تعالج البيانات البصرية وتقارنها بالأنماط اللي تدربت عليها، ومع ذلك أحياناً تخطئ بالتفسير!",
 
 app3Title:"المساعدات الذكية",
-app3Text:"تساعد النماذج اللغوية في توليد الأفكار، وتلخيص المعلومات، وترجمة النصوص، وإنشاء الإجابات.",
-app3Reveal:"تتعلم النماذج اللغوية أنماط اللغة وتولد النص بناءً على الطلب والسياق. لذلك تحتاج إجاباتها إلى التقييم.",
+app3Text:"تساعدنا نولد أفكار، نلخص كتب، نترجم لغات، ونسولف معها كأنها شخص حقيقي.",
+app3Reveal:"تتعلم أنماط الجمل والكلمات وتربط السياق ببعضه عشان تعطيك إجابة مرتبة تحتاج تدقيقك.",
 
-discover:"اكتشفي كيف تعمل ↗",
+discover:"شوف وشلون يشتغل ↗",
 
-s3Eyebrow:"03 / ما الذي أثار فضولي؟",
-s3Title:'عندما تبدأ الآلات في <span class="gradient">استشعار مشاعر البشر!</span>',
-s3Text:"أكثر ما أثار فضولي هو كيف يمكن للذكاء الاصطناعي تحليل نبرات الصوت، وسرعة الكلام، والتعبيرات لمعرفة حالة الإنسان المزاجية، رغم أنه مجرد جماد بلا مشاعر.",
-surpriseLabel:"قدرة مذهلة",
-surpriseTitle:"القراءة بين <span>السطور الرقمية</span>",
-surpriseText:"ألم تعجبي من قبل كيف أن المساعدات الصوتيّة أو روبوتات الدعم تلاحظ إن كنتِ منزعجة أو مستعجلة فقط من سرعة كلامك أو ارتفاع صوتك؟ إنها تترجم هذه النبرات فوراً دون أن تمتلك قلباً أو أذناً بشرية.",
-surpriseQuote:"\"الأمر غريب ومثير: خوارزمية صماء تستطيع التقاط مزاج الإنسان بدقة مذهلة.\"",
-surpriseBtn:"اكتشفي مثالاً واقعياً",
+s3Eyebrow:"03 / وش اللي أثار فضولي؟",
+s3Title:'لما تبدأ الآلات <span class="gradient">تفهم مشاعرنا!</span>',
+s3Text:"أكثر شي صدق صدمني هو إن الذكاء الاصطناعي صار يحلل نبرات صوتك وسرعة كلامك عشان يعرف مزاجك، مع إنه جماد ما يحس أبداً!",
+surpriseLabel:"موقف مذهل",
+surpriseTitle:"القراءة بين <span>السطور الصوتية</span>",
+surpriseText:"لاحظت كيف أن مساعدات الصوت أو خدمة العملاء الذكية تعرف فوراً إنك معصب أو مستعجل من طريقة كلامك؟ هي ما عندها قلب، بس تعرف تقرأ تفاصيل النبرة وتتفاعل معك بناءً عليها.",
+surpriseQuote:"\"شي غريب ورهيب: خوارزمية صماء تلقط مزاج الإنسان بدقة تتفوق أحياناً على البشر!\"",
+surpriseBtn:"شوف المثال الواقعي",
 
 s4Eyebrow:"04 / كيف ساعدني الذكاء الاصطناعي؟",
-s4Title:'الأداة ساعدتني. <span class="gradient">والرؤية رؤيتي.</span>',
-s4Text:"أصبح الذكاء الاصطناعي جزءًا من رحلتي الإبداعية، لكنني شكلت التجربة من خلال قراراتي وتوجيهي ومراجعتي.",
+s4Title:'الأداة ساعدتني. <span class="gradient">بس الفكرة فكرتي.</span>',
+s4Text:"دخلت الذكاء الاصطناعي كشريك في رحلة البناء، لكن كل لمسة، اختيار، وتوجيه كان بقراري ومساتي الخاصة.",
 
 toolTitle:"ChatGPT",
-toolText:"استخدمت ChatGPT لاستكشاف الأفكار، وتنظيم المحتوى، وتطوير هيكل التجربة، والمساعدة في كتابة كود الموقع.",
+toolText:"استخدمته عشان أرتب أفكاري، أصيغ المحتوى، وأساعدني في كتابة وتنسيق كود الموقع وتوزيع الشاشات.",
 
-contributionTitle:"مساهمتي الإبداعية",
-contributionText:"اخترت الفكرة، ووجهت الأسلوب البصري، وحددت المحتوى، وراجعت المخرجات، وطورت التجربة.",
-contribution1:"اختيار الفكرة وتحديد اتجاه التجربة.",
-contribution2:"مراجعة المحتوى وتحسين وضوحه.",
-contribution3:"تصميم التنقل والتدفق التفاعلي.",
+contributionTitle:"دوري الإبداعي",
+contributionText:"اخترت الفكرة من الصفر، حددت الهوية البصرية، دققت المحتوى، وعدلت كل تفصيلة لين طلع بهذا الشكل.",
+contribution1:"ابتكار الفكرة وتوجيه مسار التجربة.",
+contribution2:"مراجعة النصوص وصقلها بأسلوبي الخاص.",
+contribution3:"تصميم حركة التنقل وتجربة المستخدم.",
 
-processTitle:"من الفكرة إلى التجربة",
-processText:"دمجت التطوير بمساعدة الذكاء الاصطناعي مع توجيهي الإبداعي لصناعة تجربة تفاعلية تعكس فهمي للذكاء الاصطناعي.",
+processTitle:"من الفكرة للواقع",
+processTest:"دمجت البرمجة المدعومة بالذكاء الاصطناعي مع توجيهي الشخصي عشان أطلع بتجربة رقمية حية تعكس رؤيتي صدق.",
 
-s4Quote:"ساعدني الذكاء الاصطناعي في بناء التجربة، لكن اختياراتي هي التي منحتها معناها.",
+s4Quote:"الذكاء الاصطناعي بنى لي الأداة، بس اختياراتي هي اللي عطتها المعنى!",
 
-endEyebrow:"وصلتِ إلى الأثر",
-endTitle:'ما يبقى <span class="gradient">هو لكِ.</span>',
-endText:"يمكن للذكاء الاصطناعي أن يغير طريقة إبداعنا وتعلمنا واستكشافنا. لكن المعنى الذي نمنحه لهذه التجربة يظل إنسانيًا.",
-endQuote:"الأداة اصطناعية. أما الفضول فحقيقي.",
-replay:"↻ أعيدي التجربة",
-review:"راجعي الرحلة",
-endFooter:"الذكاء الاصطناعي كما أراه · نهاية التجربة",
+endEyebrow:"وصلت لنهاية التجربة",
+endTitle:"الأثر اللي يتبقى <span class='gradient'>هو حقك أنت.</span>",
+endText:"التقنية ممكن تغير طريقة شغلنا وتعلمنا، بس الإحساس والمعنى اللي نتركه ورا الإجابة يظل إنساني بحت.",
+endQuote:"الأداة اصطناعية.. بس الفضول والشغف حقيقيين!",
+replay:"↻ أعِد التجربة",
+review:"راجع الرحلة",
+endFooter:"ME & THE MACHINE · نهاية التجربة",
 
 sourcesLabel:"المصادر والمراجع",
 sourcesTitle:"الأبحاث والتوثيق الأساسي",
 
 back:"السابق",
 next:"التالي",
-finish:"إنهاء",
-progress:"استكشاف المجهول",
+finish:"انهاء",
+progress:"رحلة استكشاف المجهول",
 
-meaningFeedback0:"يمكن للذكاء الاصطناعي أن يكون أداة قوية توسع قدراتنا، مع بقاء القرارات بأيدينا.",
-meaningFeedback1:"يمكن للذكاء الاصطناعي أن يكون شريكًا إبداعيًا يقدم احتمالات جديدة نقيّمها ونطورها.",
-meaningFeedback2:"يمكن أن يكون الذكاء الاصطناعي أداة وشريكًا إبداعيًا، لكن الحكم البشري يظل ضروريًا.",
+meaningFeedback0:"الذكاء الاصطناعي أداة قوية توسع قدراتنا وتترك القرار النهائي بأيدينا.",
+meaningFeedback1:"يقدر يكون شريك إبداعي يقدم أفكار نقيّمها ونعيد صياغتها.",
+meaningFeedback2:"هو أداة وشريك، بس التوجيه البشري يظل هو الأساس.",
 
 surpriseFeedback:"مثال واقعي: في أنظمة خدمة العملاء الصوتية المتقدمة، تحلل النماذج ترددات الصوت واهتزاته لمعرفة ما إذا كان العميل هادئاً، غاضباً، أو مرتبكاً، وتقوم تلقائياً بتعديل طريقة تفاعلها لمساعدته. هذا يجعلك ترين كيف يمكن للأنماط أن تحاكي التعاطف الإنساني!"
 }
@@ -808,7 +819,7 @@ surpriseFeedback:"مثال واقعي: في أنظمة خدمة العملاء �
 // ========================================
 
 let currentScreen = 0;
-let currentLang = "en";
+let currentLang = "ar";
 const totalScreens = 6;
 
 function goTo(index){
@@ -859,7 +870,7 @@ function setLanguage(lang){
   document.body.dir = lang === "ar" ? "rtl" : "ltr";
 
   document.getElementById("langBtn").textContent = lang === "ar" ? "EN" : "AR";
-  soundBtn.textContent = soundEnabled ? (lang === "ar" ? "🔊 صوت" : "🔊 SOUND") : (lang === "ar" ? "🔇 صامت" : "🔇 MUTE");
+  soundBtn.textContent = soundEnabled ? (lang === "ar" ? "🔊 صوت" : "🔊 صامت") : (lang === "ar" ? "🔇 SOUND" : "🔇 MUTE");
 
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const key = el.dataset.i18n;
@@ -956,7 +967,6 @@ function createStars(){
 function drawStars(){
   ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
 
-  stars.dir = currentLang === "ar" ? "rtl" : "ltr";
   stars.forEach(star=>{
     star.y -= star.speed;
 
@@ -983,7 +993,7 @@ drawStars();
 // INITIALIZE
 // ========================================
 
-setLanguage("en");
+setLanguage("ar");
 goTo(0);
 
 </script>
