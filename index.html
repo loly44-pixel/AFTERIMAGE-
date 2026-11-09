@@ -501,6 +501,18 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
   <p class="hero-sub" data-i18n="endText">
     Artificial intelligence can transform the way we create, learn, and explore. But the meaning we give to that experience is still human.
   </p>
+  
+  <!-- قسم المصادر المضاف هنا بناءً على متطلبات المهمة -->
+  <div style="max-width:800px;width:100%;margin:40px auto 20px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;" dir="ltr">
+    <div class="mini-label" style="margin-bottom:10px;color:var(--purple);" data-i18n="sourcesLabel">REFERENCES & SOURCES</div>
+    <h3 style="font-size:18px;margin-bottom:15px;" data-i18n="sourcesTitle">Key Research & Documentation</h3>
+    <ul style="list-style:none;display:grid;gap:10px;font-size:13px;color:var(--muted);">
+      <li>• <strong style="color:var(--text);">OpenAI Research:</strong> GPT Architecture & Emergent Abilities in Large Language Models.</li>
+      <li>• <strong style="color:var(--text);">Computer Vision Principles:</strong> Understanding Pattern Recognition and Visual Processing.</li>
+      <li>• <strong style="color:var(--text);">MDN Web Docs:</strong> HTML Canvas, Web Audio API, and Modern JS Guidance.</li>
+    </ul>
+  </div>
+
   <div class="quote" style="max-width:600px">
     <strong data-i18n="endQuote">The tool is artificial. The curiosity is real.</strong>
   </div>
@@ -523,6 +535,42 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 </div>
 
 <script>
+
+// ========================================
+// AUDIO SYSTEM (Web Audio API)
+// ========================================
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playInteractionSound(freq = 440, type = 'sine', duration = 0.15) {
+  try {
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(freq / 2, audioCtx.currentTime + duration);
+    
+    gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+    
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+  } catch(e) {}
+}
+
+document.addEventListener('click', (e) => {
+  if(e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+    playInteractionSound(750, 'triangle', 0.1);
+  }
+});
+
 
 // ========================================
 // LANGUAGE SYSTEM
@@ -600,6 +648,9 @@ endQuote:"The tool is artificial. The curiosity is real.",
 replay:"↻ REPLAY EXPERIENCE",
 review:"REVIEW THE JOURNEY",
 endFooter:"AI THROUGH MY EYES · END OF EXPERIENCE",
+
+sourcesLabel:"REFERENCES & SOURCES",
+sourcesTitle:"Key Research & Documentation",
 
 back:"BACK",
 next:"NEXT",
@@ -683,6 +734,9 @@ endQuote:"الأداة اصطناعية. أما الفضول فحقيقي.",
 replay:"↻ أعيدي التجربة",
 review:"راجعي الرحلة",
 endFooter:"الذكاء الاصطناعي كما أراه · نهاية التجربة",
+
+sourcesLabel:"المصادر والمراجع",
+sourcesTitle:"الأبحاث والتوثيق الأساسي",
 
 back:"السابق",
 next:"التالي",
