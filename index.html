@@ -398,32 +398,32 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
   </div>
 </section>
 
-<!-- SCREEN 3 : SURPRISE -->
+<!-- SCREEN 3 : SURPRISE (تم تحديث هذا القسم بمثال واضح وفضول ممتع) -->
 <section class="screen" id="screen3">
   <div class="content">
     <div class="section-head">
       <div class="eyebrow" data-i18n="s3Eyebrow">03 / WHAT SURPRISED ME</div>
-      <h2 data-i18n="s3Title">Some abilities emerge <span class="gradient">unexpectedly.</span></h2>
+      <h2 data-i18n="s3Title">When AI learns what it <span class="gradient">was never taught.</span></h2>
       <p data-i18n="s3Text">
-        What genuinely sparked my curiosity was how AI models can sometimes show abilities that were not directly taught to them.
+        What genuinely surprised me is that AI can suddenly discover and do things completely on its own, simply because it got smart enough from reading massive amounts of data!
       </p>
     </div>
 
     <div class="surprise-card">
-      <div class="mini-label" data-i18n="surpriseLabel">WHEN SCALE CHANGES WHAT IS POSSIBLE</div>
-      <div class="surprise-number">?</div>
-      <h3 data-i18n="surpriseTitle">Can AI learn something it was never explicitly taught?</h3>
+      <div class="mini-label" data-i18n="surpriseLabel">SURPRISING DISCOVERY</div>
+      <div class="surprise-number">💡</div>
+      <h3 data-i18n="surpriseTitle">The <span>"Secret Skill"</span> Phenomenon</h3>
       <p data-i18n="surpriseText">
-        As some AI models become larger and are trained on more data, they can show abilities that are less visible in smaller models. Researchers sometimes describe these as emergent abilities.
+        Imagine teaching a model only to translate English to French. Suddenly, without any extra training, it starts translating French to Spanish perfectly! Nobody programmed it to do that—it figured it out on its own.
       </p>
 
       <div class="quote">
         <strong data-i18n="surpriseQuote">
-          The surprising part is not just that AI learns from examples, but that new capabilities can appear in ways researchers are still trying to understand.
+          "The most mind-blowing part is that when AI scales up, new talents appear out of nowhere like magic."
         </strong>
       </div>
 
-      <button class="btn" onclick="revealSurprise()" data-i18n="surpriseBtn">REVEAL THE INSIGHT</button>
+      <button class="btn" onclick="revealSurprise()" data-i18n="surpriseBtn">REVEAL THE EXAMPLE</button>
       <div class="feedback" id="surpriseFeedback"></div>
     </div>
 
@@ -541,7 +541,7 @@ footer{color:#656377;text-align:center;font-size:10px;letter-spacing:2px;margin-
 // AUDIO SYSTEM (Web Audio API with Toggle)
 // ========================================
 
-let soundEnabled = false; // يبدأ مغلقاً افتراضياً لراحة المستخدم
+let soundEnabled = false;
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 function playInteractionSound(freq = 440, type = 'sine', duration = 0.15) {
@@ -587,7 +587,7 @@ soundBtn.addEventListener("click", () => {
 
 
 // ========================================
-// LANGUAGE SYSTEM
+// LANGUAGE SYSTEM (مُحدث بالترجمات الجديدة الواضحة)
 // ========================================
 
 const translations = {
@@ -629,13 +629,13 @@ app3Reveal:"Language models learn patterns in language and generate text based o
 discover:"DISCOVER THE MECHANISM ↗",
 
 s3Eyebrow:"03 / WHAT SURPRISED ME",
-s3Title:'Some abilities emerge <span class="gradient">unexpectedly.</span>',
-s3Text:"What genuinely sparked my curiosity was how AI models can sometimes show abilities that were not directly taught to them.",
-surpriseLabel:"WHEN SCALE CHANGES WHAT IS POSSIBLE",
-surpriseTitle:"Can AI learn something it was never explicitly taught?",
-surpriseText:"As some AI models become larger and are trained on more data, they can show abilities that are less visible in smaller models. Researchers sometimes describe these as emergent abilities.",
-surpriseQuote:"The surprising part is not just that AI learns from examples, but that new capabilities can appear in ways researchers are still trying to understand.",
-surpriseBtn:"REVEAL THE INSIGHT",
+s3Title:'When AI learns what it <span class="gradient">was never taught.</span>',
+s3Text:"What genuinely surprised me is that AI can suddenly discover and do things completely on its own, simply because it got smart enough from reading massive amounts of data!",
+surpriseLabel:"SURPRISING DISCOVERY",
+surpriseTitle:"The <span>'Secret Skill'</span> Phenomenon",
+surpriseText:"Imagine teaching a model only to translate English to French. Suddenly, without any extra training, it starts translating French to Spanish perfectly! Nobody programmed it to do that—it figured it out on its own.",
+surpriseQuote:"\"The most mind-blowing part is that when AI scales up, new talents appear out of nowhere like magic.\"",
+surpriseBtn:"REVEAL THE EXAMPLE",
 
 s4Eyebrow:"04 / HOW AI HELPED ME",
 s4Title:'The tool helped. <span class="gradient">The vision was mine.</span>',
@@ -675,7 +675,7 @@ meaningFeedback0:"AI can be a powerful tool, helping us extend our abilities whi
 meaningFeedback1:"AI can act as a creative collaborator, offering possibilities that we can evaluate and reshape.",
 meaningFeedback2:"AI can be a tool and a creative partner, but human judgment remains essential.",
 
-surpriseFeedback:"This idea is fascinating because a model may show a capability even when it was not explicitly trained for that exact task. However, researchers still debate how sudden these abilities really are: sometimes a skill may look like it appeared all at once because of how it is measured. It made me curious about what AI can learn from patterns—and what we still do not understand about it."
+surpriseFeedback:"Real-World Example: In artificial intelligence research (like GPT models), scientists noticed that when models become large enough, they develop 'Zero-Shot Capabilities'—meaning they can successfully solve tests or languages they were never explicitly trained or programmed to handle. It's like teaching a student math, and finding out they suddenly figured out physics on their own!"
 },
 
 ar:{
@@ -715,13 +715,13 @@ app3Reveal:"تتعلم النماذج اللغوية أنماط اللغة وت�
 discover:"اكتشفي كيف تعمل ↗",
 
 s3Eyebrow:"03 / ما الذي أثار فضولي؟",
-s3Title:'قدرات تظهر <span class="gradient">بشكل غير متوقع.</span>',
-s3Text:"الشيء الذي أثار فضولي فعلًا هو كيف يمكن لنماذج الذكاء الاصطناعي أن تُظهر أحيانًا قدرات لم يتم تعليمها لها بشكل مباشر.",
-surpriseLabel:"عندما يغيّر الحجم ما هو ممكن",
-surpriseTitle:"هل يستطيع الذكاء الاصطناعي تعلّم شيء لم يُعلَّم إياه صراحةً؟",
-surpriseText:"عندما تصبح بعض نماذج الذكاء الاصطناعي أكبر وتتدرب على بيانات أكثر، قد تُظهر قدرات لا تظهر بوضوح في النماذج الأصغر. ويصف الباحثون بعضها أحيانًا بالقدرات الناشئة.",
-surpriseQuote:"المثير ليس فقط أن الذكاء الاصطناعي يتعلم من الأمثلة، بل أن قدرات جديدة قد تظهر بطرق لا يزال الباحثون يحاولون فهمها.",
-surpriseBtn:"اكتشفي الفكرة",
+s3Title:'عندما يتعلم الذكاء الاصطناعي شيئاً <span class="gradient">لم يُعلَّم إياه أبداً!</span>',
+s3Text:"أكثر ما أدهشني هو أن الذكاء الاصطناعي يمكنه أحياناً اكتشاف وابتكار قدرات جديدة كلياً بمفرده، لمجرد أنه أصبح ذكياً بما يكفي من قراءة كميات هائلة من البيانات!",
+surpriseLabel:"اكتشاف مذهل",
+surpriseTitle:"ظاهرة <span>'المهارات السرية'</span>",
+surpriseText:"تخيل أنك دربت نموذجاً على ترجمة اللغتين الإنجليزية والفرنسية فقط. وفجأة، وبدون أي تدريب إضافي، تجده يترجم من الفرنسية إلى الإسبانية باحتراف! لم يبرمجه أحد على ذلك، بل استنتج القاعدة بنفسه.",
+surpriseQuote:"\"المثير حقاً هو أنه كلما توسع الذكاء الاصطناعي، ظهرت مواهب جديدة من العدم وكأنها سحر.\"",
+surpriseBtn:"اكتشفي مثالاً واقعياً",
 
 s4Eyebrow:"04 / كيف ساعدني الذكاء الاصطناعي؟",
 s4Title:'الأداة ساعدتني. <span class="gradient">والرؤية رؤيتي.</span>',
@@ -761,7 +761,7 @@ meaningFeedback0:"يمكن للذكاء الاصطناعي أن يكون أدا�
 meaningFeedback1:"يمكن للذكاء الاصطناعي أن يكون شريكًا إبداعيًا يقدم احتمالات جديدة نقيّمها ونطورها.",
 meaningFeedback2:"يمكن أن يكون الذكاء الاصطناعي أداة وشريكًا إبداعيًا، لكن الحكم البشري يظل ضروريًا.",
 
-surpriseFeedback:"الفكرة مثيرة لأن النموذج قد يُظهر قدرة حتى لو لم يتدرب صراحةً على المهمة نفسها. لكن الباحثين ما زالوا يناقشون مدى ظهور هذه القدرات بشكل مفاجئ فعلًا؛ فقد تبدو كأنها ظهرت دفعة واحدة بسبب طريقة قياسها. وهذا جعلني أتساءل عمّا يستطيع الذكاء الاصطناعي تعلمه من الأنماط، وما الذي ما زلنا لا نفهمه عنه."
+surpriseFeedback:"مثال واقعي: في أبحاث الذكاء الاصطناعي (مثل نماذج GPT)، لاحظ العلماء أنه عندما تصبح النماذج ضخمة جداً، فإنها تطور ما يُسمى بـ 'القدرات التلقائية' (Zero-Shot Capabilities)؛ أي أنها تستطيع حل مسائل أو لغات لم يتم تدريبها صراحةً عليها أبداً. إنه يشبه أن تُعلم طالباً مادة الرياضيات، فتتفاجأ أنه استنتج قوانين الفيزياء بمفرده دون أن تدرسها له!"
 }
 
 };
